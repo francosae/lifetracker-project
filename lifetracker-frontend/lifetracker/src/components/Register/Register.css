@@ -1,0 +1,125 @@
+.Register {
+  min-height: calc(100vh - var(--navbar-height));
+  height: 100%;
+  max-height: calc(100vh - var(--navbar-height));
+  width: 100%;
+  max-width: 100vw;
+  background: var(--dark-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Register .card {
+  min-height: 600px;
+  width: 520px;
+  padding: 24px 36px 0 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Register .card .error {
+  color: var(--bright-red);
+}
+.Register .card h2 {
+  font-size: 42px;
+  margin-bottom: 4px;
+  font-weight: 600;
+  color: black;
+}
+
+.Register .card .form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding-bottom: 10px;
+  color: black;
+}
+.Register .card .split-input-field {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 20px;
+}
+.Register .card .form .input-field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin: 8px 0;
+  flex: 1;
+}
+.Register .card .form .input-field label {
+  margin-bottom: 5px;
+  color: black;
+}
+.Register .card .form .input-field input {
+  height: 50px;
+  padding: 0 15px;
+  font-size: 16px;
+  border: solid 1px var(--border-color);
+  width: 100%;
+  background: transparent;
+  color: black;
+}
+.Register .card .form .input-field input::placeholder {
+  color: black;
+}
+.Register .card .form .btn {
+  width: 100%;
+  height: 70px;
+  color: white;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background: var(--dark-blue); */
+  border: none;
+  cursor: pointer;
+  margin-top: 15px;
+}
+.Register .card .footer {
+  border-top: solid 1px var(--border-color);
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 100%;
+  color: black;
+}
+.Register .card .footer p {
+  color: black;
+}
+
+
+
+:root {
+  --side-padding: 40px;
+  --side-padding: 80px;
+  --content-width: 1100px;
+  --navbar-height: 100px;
+  --dark-background: rgb(220, 223, 248)
+  --less-dark-background: #rgb(220, 223, 248)
+  --bright-green: #00c98e;
+  --pure-white: #fff;
+  --grey-bg: #f7f7f7;
+  --accent-gold: #ffab09;
+  --accent-aqua: #03c5d1;
+  --accent-blue: #4e81eb;
+  --bright-red: #fe3210;
+  --red-linear-gradient: linear-gradient(64.7deg, rgba(251, 112, 144, 0.25) 0%, #c90000 100%);
+  --red-linear-gradient: linear-gradient(64.7deg, rgba(251, 112, 144, 0.85) 0%, #c90000 100%);
+  --red-linear-gradient: linear-gradient(64.7deg, #c90000 0%, rgba(251, 112, 144, 0.85) 100%);
+  --blue-linear-gradient: linear-gradient(64.7deg, #4e81eb 0%, #4e81eb 100%);
+  --purple-linear-gradient: linear-gradient(64.7deg, #441dfc 0%, #4e81eb 100%);
+  --orange-linear-gradient: linear-gradient(64.7deg, #8e3232 0%, #c96d00 100%);
+  --teal-linear-gradient: linear-gradient(64.7deg, #1000c9 0%, #00c98e 100%);
+  --aqua-linear-gradient: linear-gradient(64.7deg, #03c5d1 0%, #03c5d1 100%);
+  --gold-linear-gradient: linear-gradient(64.7deg, #ffab09 0%, #ffab09 100%);
+  --muted: #969696;
+  --font-dark: #212121;
+  --font-light: #5b5b5b;
+  --border-color: #e4e4e4;
+  --color-secondary: rgb(220, 223, 248)
+}

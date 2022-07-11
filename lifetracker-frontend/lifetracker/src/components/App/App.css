@@ -1,0 +1,41 @@
+
+.App {
+    width: 100%;
+    max-width: 100vw;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    background: rgb(220, 223, 248)
+  }
+  
+  :root {
+    --side-padding: 40px;
+    --side-padding: 80px;
+    --content-width: 1100px;
+    --navbar-height: 100px;
+    --dark-background: rgb(220, 223, 248)
+    --less-dark-background: #rgb(220, 223, 248)
+    --bright-green: #00c98e;
+    --pure-white: #fff;
+    --grey-bg: #f7f7f7;
+    --accent-gold: #ffab09;
+    --accent-aqua: #03c5d1;
+    --accent-blue: #4e81eb;
+    --bright-red: #fe3210;
+    --red-linear-gradient: linear-gradient(64.7deg, rgba(251, 112, 144, 0.25) 0%, #c90000 100%);
+    --red-linear-gradient: linear-gradient(64.7deg, rgba(251, 112, 144, 0.85) 0%, #c90000 100%);
+    --red-linear-gradient: linear-gradient(64.7deg, #c90000 0%, rgba(251, 112, 144, 0.85) 100%);
+    --blue-linear-gradient: linear-gradient(64.7deg, #4e81eb 0%, #4e81eb 100%);
+    --purple-linear-gradient: linear-gradient(64.7deg, #441dfc 0%, #4e81eb 100%);
+    --orange-linear-gradient: linear-gradient(64.7deg, #8e3232 0%, #c96d00 100%);
+    --teal-linear-gradient: linear-gradient(64.7deg, #1000c9 0%, #00c98e 100%);
+    --aqua-linear-gradient: linear-gradient(64.7deg, #03c5d1 0%, #03c5d1 100%);
+    --gold-linear-gradient: linear-gradient(64.7deg, #ffab09 0%, #ffab09 100%);
+    --muted: #969696;
+    --font-dark: #212121;
+    --font-light: #5b5b5b;
+    --border-color: #e4e4e4;
+    --color-secondary: rgb(220, 223, 248)
+  }
