@@ -1,30 +1,13 @@
 import { createContext, useState, useContext, useEffect } from "react"
 import { useAuthContext } from "./auth"
-import { useSleepContext } from "./sleep"
-import { useExerciseContext } from "./exercise"
-import { useNutritionContext } from "./nutrition"
 import apiClient from "../apiClient/apiClient"
 
 const ActivityContext = createContext(null)
 
 export const ActivityContextProvider = ({ children }) => {
   const { user } = useAuthContext()
-  const { exercises, initialized: exerciseInitialized } = useExerciseContext()
-  const { nutritions, initialized: nutritionInitialized } = useNutritionContext()
-  const { sleeps, initialized: sleepInitialized } = useSleepContext()
   const [initialized, setInitialized] = useState(false)
-  const [activity, setActivity] = useState({
-    averageExerciseIntensity: 0,
-    averageDailyCalories: 0,
-    maxCaloriesInOneMeal: 0,
-    averageHoursSleep: 0,
-    totalHoursSlept: 0,
-    totalExerciseMinutes: 0,
-  })
-
-  const numTrackingItems = exercises.length + nutritions.length + sleeps.length
-  const allInitialized = [exerciseInitialized, nutritionInitialized, sleepInitialized].every((v) => Boolean(v))
-
+  const [activity, setActivity] = useState({})
   useEffect(() => {
     const fetchUserActivity = async () => {
       const { data } = await apiClient.fetchUserActivity()
@@ -34,15 +17,12 @@ export const ActivityContextProvider = ({ children }) => {
     }
 
     if (user?.username) {
-      if (allInitialized && !initialized) {
-        fetchUserActivity()
-        setInitialized(true)
-      } else if (allInitialized && numTrackingItems !== 0) {
+      if (!initialized) {
         fetchUserActivity()
         setInitialized(true)
       }
     }
-  }, [user?.username, numTrackingItems, allInitialized])
+  }, [user?.username])
 
   const activityValue = { activity, setActivity }
 
@@ -54,9 +34,3 @@ export const ActivityContextProvider = ({ children }) => {
 }
 
 export const useActivityContext = () => useContext(ActivityContext)
-
-export const selectMainSummaryStats = (activity) => ({
-  totalExerciseMinutes: activity.totalExerciseMinutes,
-  averageHoursSleep: activity.averageHoursSleep,
-  averageDailyCalories: activity.averageDailyCalories,
-})
