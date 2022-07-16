@@ -24,8 +24,8 @@ export const useRegistrationForm = () => {
       email: form.email,
       password: form.password,
       username: form.username,
-      firstName: form.firstName,
-      lastName: form.lastName,
+      first_name: form.firstName,
+      last_name: form.lastName,
     })
     if (data) {
       setUser(data.user)

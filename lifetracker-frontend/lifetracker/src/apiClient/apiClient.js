@@ -68,6 +68,7 @@ class ApiClient {
   }
 
   async loginUser(credentials) {
+    console.log(this.token)
     return await this.request({ endpoint: `auth/login`, method: `POST`, data: credentials })
   }
 

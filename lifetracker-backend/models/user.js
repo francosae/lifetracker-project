@@ -38,7 +38,6 @@ class User {
   }
 
   static async register(credentials) {
-    console.log(credentials.email, credentials.password, credentials.first_name, credentials.last_name, credentials.username);
     const requiredFields = ['email', 'password', 'first_name', 'last_name', 'username'];
     requiredFields.forEach((property) => {
       if (!credentials.hasOwnProperty(property)) {
@@ -76,7 +75,6 @@ class User {
       ]
     );
     const user = userResult.rows[0];
-    // console.log(userResult.rows[0])
     return User.makePublicUser(user);
   }
 
@@ -88,17 +86,16 @@ class User {
     const query = `SELECT * FROM users WHERE email = $1`;
 
     const result = await db.query(query, [email.toLowerCase()]);
-
+    
     const user = result.rows[0];
-
-    return user;
+    return user
   }
 
   static async fetchUserByUsername(username) {
     if (!username) {
       throw new BadRequestError('No username provided');
     }
-
+    
     const query = `SELECT * FROM users WHERE username = $1`;
 
     const result = await db.query(query, [username]);

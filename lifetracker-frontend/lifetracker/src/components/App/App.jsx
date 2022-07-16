@@ -10,25 +10,38 @@ import Register from "../Register/Register"
 import AuthRoute from "../AuthRoute/AuthRoute"
 import NotFound from "../NotFound/NotFound"
 import NutritionPage from "../NutritionPage/NutritionPage"
+import Activity from "../Activity/Activity"
 //Contexts
 import { AuthContextProvider } from "../../contexts/auth"
+import { NutritionContextProvider } from "../../contexts/nutrition"
+import { ExerciseContextProvider } from "../../contexts/exercise"
+import { ActivityContextProvider } from "../../contexts/activity"
+import { SleepContextProvider } from "../../contexts/sleep"
 
 export default function App() {
-  const [appState, setAppState] = useState({})
   return (
     <AuthContextProvider>
-      <div className="App">
-        <BrowserRouter>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="*" element={<NotFound />} />
-            <Route path="/nutrition" element={<NutritionPage />} />
-          </Routes>
-        </BrowserRouter>
-      </div>
+      <NutritionContextProvider>
+        <ExerciseContextProvider>
+          <SleepContextProvider>
+            <ActivityContextProvider>
+              <div className="App">
+                <BrowserRouter>
+                  <Navbar />
+                  <Routes>
+                    <Route path="/" element={<Home /> } />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/register" element={<Register />} />
+                    <Route path="*" element={<NotFound />} />
+                    <Route path="/nutrition/*" element={<AuthRoute element={< NutritionPage />} /> } />
+                    <Route path="/activity" element={<AuthRoute element={<Activity /> } /> } />
+                  </Routes>
+                </BrowserRouter>
+              </div>
+            </ActivityContextProvider>
+          </SleepContextProvider>
+        </ExerciseContextProvider>
+      </NutritionContextProvider>
     </AuthContextProvider>
   )
 }

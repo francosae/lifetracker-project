@@ -13,3 +13,7 @@ db.connect((err) => {
 })
 
 module.exports = db
+
+// "postgresql://postgres:postgres@localhost:5432/lifetracker"
+
+// "postgresql-amorphous-27340"
