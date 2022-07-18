@@ -4,7 +4,7 @@
 
 Submitted by: **NAME**
 
-Deployed Application: [Lifetracker Deployed Site](ADD_LINK_HERE)
+Deployed Application: [Lifetracker Deployed Site](https://sparkling-wool.surge.sh/)
 
 ## Application Features
 
@@ -39,7 +39,8 @@ Implement any of the following features to improve the application:
 
 ### Walkthrough Video
 
-xxx
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/107495671/179634298-007522d1-0881-4441-bfe0-8b33102a26a3.gif)
+
 
 
 `ADD_EMBEDDED_CODE_HERE`
