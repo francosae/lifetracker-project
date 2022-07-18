@@ -2,7 +2,7 @@
 
 # Week 3 Assignment: Life Tracker
 
-Submitted by: **NAME**
+Submitted by: **Paul Franco**
 
 Deployed Application: [Lifetracker Deployed Site](https://sparkling-wool.surge.sh/)
 
