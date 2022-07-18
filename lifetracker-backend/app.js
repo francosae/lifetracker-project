@@ -6,7 +6,9 @@ const { PORT } = require('./config')
 const { NotFoundError } = require('./utils/errors');
 const authRoutes = require("./routes/auth")
 const activityRoutes = require("./routes/activity")
+const exerciseRoutes = require("./routes/exercise")
 const security = require("./middleware/security")
+
 const nutritionRoutes = require("./routes/nutrition")
 var colors = require('colors');
 require('dotenv').config();
@@ -17,6 +19,7 @@ app.use(cors())
 app.use(security.extractUserFromJwt)
 app.use("/auth", authRoutes)
 app.use("/nutrition", nutritionRoutes)
+app.use("/exercise", exerciseRoutes)
 app.use("/activity", activityRoutes)
 
 app.get("/", function (req, res) {

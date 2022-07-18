@@ -40,12 +40,12 @@ export default function Activity() {
             <Summary
               color="gold"
               isAverage={false}
-              stat={{ title: `Total Exercise Minutes`, }}
+              stat={{ title: `Total Exercise Minutes`, value: number }}
             />
             <Summary
               color="purple"
               isAverage={true}
-              stat={{ title: `Avg Sleep Hours`, }}
+              stat={{ title: `Avg Sleep Hours`, value: number }}
             />
             <Summary
               color="aqua"

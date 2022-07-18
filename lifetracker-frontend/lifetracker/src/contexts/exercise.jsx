@@ -12,7 +12,7 @@ export const ExerciseContextProvider = ({ children }) => {
   useEffect(() => {
     const fetchUserExercise = async () => {
       const { data } = await apiClient.fetchUserExercise()
-      if (data?.exercises) setExercises(data.exercises)
+      if (data?.userExercise) setExercises(data.userExercise)
       setInitialized(true)
     }
 

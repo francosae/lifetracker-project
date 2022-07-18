@@ -11,6 +11,7 @@ import AuthRoute from "../AuthRoute/AuthRoute"
 import NotFound from "../NotFound/NotFound"
 import NutritionPage from "../NutritionPage/NutritionPage"
 import Activity from "../Activity/Activity"
+import ExercisePage from "../ExercisePage/ExercisePage"
 //Contexts
 import { AuthContextProvider } from "../../contexts/auth"
 import { NutritionContextProvider } from "../../contexts/nutrition"
@@ -35,7 +36,8 @@ export default function App() {
                     <Route path="*" element={<NotFound />} />
                     <Route path="/nutrition/*" element={<AuthRoute element={< NutritionPage />} /> } />
                     <Route path="/activity" element={<AuthRoute element={<Activity /> } /> } />
-                  </Routes>
+                    <Route path="/exercise/*" element={<AuthRoute element={<ExercisePage /> } /> } />
+                   </Routes>
                 </BrowserRouter>
               </div>
             </ActivityContextProvider>
